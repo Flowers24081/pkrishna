@@ -17,20 +17,17 @@ body {
     background: #eeeeee;
     color: #222222;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 45px 25px;
 }
 
 .site {
     width: 100%;
     max-width: 1120px;
-    min-height: 700px;
+    min-height: 850px;
+    margin: auto;
     background: white;
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    display: flex;
 }
 
 .sidebar {
@@ -62,77 +59,85 @@ body {
 }
 
 .content {
-    width: 100%;
-    padding: 65px 75px;
+    padding: 65px 85px;
 }
 
-h1 {
-    font-size: 36px;
+.page-title {
+    text-align: center;
+    font-size: 32px;
     font-weight: 500;
-    margin-bottom: 12px;
-    color: #111111;
+    margin-bottom: 25px;
 }
 
-.subtitle {
-    color: #666666;
-    font-size: 16px;
-    margin-bottom: 35px;
+hr {
+    border: none;
+    height: 2px;
+    background: #222222;
+    margin-bottom: 55px;
 }
 
-h2 {
-    font-size: 22px;
-    margin: 35px 0 14px;
-    color: #222222;
+.section {
+    margin-bottom: 65px;
 }
 
-p {
+.section h2 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+
+.section h3 {
     font-size: 15px;
+    margin: 25px 0 12px;
+}
+
+.section p {
+    font-size: 14px;
     line-height: 1.9;
     color: #555555;
     margin-bottom: 15px;
 }
 
-.interest-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-top: 20px;
+.center {
+    text-align: center;
 }
 
-.interest-card {
-    background: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    padding: 22px;
-}
-
-.interest-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-    color: #222222;
-}
-
-.interest-card p {
+.course-list {
+    text-align: center;
+    line-height: 2.2;
+    color: #555555;
     font-size: 14px;
-    margin-bottom: 0;
 }
 
-.quote {
-    border-left: 3px solid #222222;
-    padding: 12px 20px;
-    margin: 35px 0;
-    color: #666666;
-    font-style: italic;
-    line-height: 1.8;
+.skills {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px 25px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-description {
+    color: #555555;
+}
+
+.experience-block {
+    margin-bottom: 30px;
 }
 
 @media (max-width: 650px) {
     body {
-        padding: 25px 15px;
+        padding: 20px 12px;
     }
 
     .site {
-        min-height: 650px;
+        display: flex;
         flex-direction: column;
     }
 
@@ -141,7 +146,6 @@ p {
         width: 100%;
         flex-direction: row;
         justify-content: center;
-        background: white;
         padding: 10px;
         gap: 5px;
     }
@@ -158,12 +162,13 @@ p {
         padding: 40px 22px;
     }
 
-    h1 {
-        font-size: 29px;
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 5px;
     }
 
-    .interest-grid {
-        grid-template-columns: 1fr;
+    .skill-description {
+        margin-bottom: 15px;
     }
 }
 </style>
@@ -183,95 +188,144 @@ p {
 
     <main class="content">
 
-        <h1>About Me</h1>
-        <p class="subtitle">
-            Computer Engineering Student | Georgia Tech
-        </p>
+        <h1 class="page-title">About</h1>
+        <hr>
 
-        <h2>Who I Am</h2>
+        <!-- EDUCATION -->
+        <section class="section">
+            <h2>Education</h2>
 
-        <p>
-            I'm Prahlad Krishna, a Computer Engineering student
-            at the Georgia Institute of Technology. I'm interested
-            in understanding how technology works at every level,
-            from software applications to the underlying hardware
-            that powers modern computing systems.
-        </p>
+            <p>
+                I'm currently studying Computer Engineering at
+                <strong>Georgia Institute of Technology</strong>.
+                My academic interests include digital systems,
+                computer architecture, semiconductor technology,
+                and hardware design.
+            </p>
 
-        <p>
-            My experiences in software development, artificial
-            intelligence, and cybersecurity have helped me develop
-            a strong foundation in problem-solving and building
-            technology-driven solutions.
-        </p>
+            <div class="center">
+                <h3>Relevant Coursework</h3>
 
-        <h2>Academic Interests</h2>
+                <div class="course-list">
+                    CS 1301 · Introduction to Computing<br>
+                    MATH 1554 · Linear Algebra<br>
+                    APPH 1040 · Scientific Foundations of Health<br>
+                    HTS 2084 · The World Today
+                </div>
 
-        <p>
-            I'm particularly interested in computer architecture
-            and the design of digital systems. I want to explore
-            how processors are designed, how hardware components
-            interact, and how semiconductor technology continues
-            to advance computing.
-        </p>
+                <h3>Academic Interests</h3>
 
-        <div class="interest-grid">
+                <div class="course-list">
+                    Digital Logic Design · Processor Architecture<br>
+                    VLSI Design · Computer Organization<br>
+                    Hardware Security · Embedded Systems
+                </div>
+            </div>
+        </section>
 
-            <div class="interest-card">
-                <h3>Digital Hardware</h3>
+        <!-- SKILLS -->
+        <section class="section">
+            <h2>Technical Skills</h2>
+
+            <div class="skills">
+
+                <div class="skill-name">Programming</div>
+                <div class="skill-description">
+                    Python, Java, JavaScript
+                </div>
+
+                <div class="skill-name">Web Development</div>
+                <div class="skill-description">
+                    HTML, CSS, Node.js, Streamlit
+                </div>
+
+                <div class="skill-name">Backend Development</div>
+                <div class="skill-description">
+                    FastAPI, REST APIs, PostgreSQL
+                </div>
+
+                <div class="skill-name">Artificial Intelligence</div>
+                <div class="skill-description">
+                    Large Language Models, Prompt Engineering,
+                    Vector Databases
+                </div>
+
+                <div class="skill-name">Cybersecurity</div>
+                <div class="skill-description">
+                    Network Security, CTF Challenges,
+                    Wireshark, Nmap
+                </div>
+
+                <div class="skill-name">Tools</div>
+                <div class="skill-description">
+                    Git, GitHub, Linux, VS Code
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE AND ACTIVITIES -->
+        <section class="section">
+            <h2>Experience and Activities</h2>
+
+            <p>
+                I've developed technical and collaborative skills
+                through internships, independent projects,
+                extracurricular activities, and leadership
+                experiences.
+            </p>
+
+            <div class="experience-block">
+                <h3>Software Development</h3>
+
                 <p>
-                    Logic design, digital circuits, processor
-                    architecture, and hardware development.
+                    At <strong>Spydr</strong>, I contributed to
+                    developing an AI-powered platform, working on
+                    user interfaces, backend API functionality,
+                    data ingestion, and LLM-based research features.
+                </p>
+
+                <p>
+                    At <strong>iVue Robotics</strong>, I gained
+                    experience building web applications using
+                    JavaScript, Node.js, HTML, and CSS.
                 </p>
             </div>
 
-            <div class="interest-card">
-                <h3>Chip Design</h3>
+            <div class="experience-block">
+                <h3>Technical Projects and Research</h3>
+
                 <p>
-                    Exploring semiconductor technology,
-                    integrated circuits, and hardware design.
+                    I enjoy exploring applications of artificial
+                    intelligence, cybersecurity, and computer
+                    engineering through personal projects and
+                    technical experimentation.
                 </p>
             </div>
 
-            <div class="interest-card">
-                <h3>Artificial Intelligence</h3>
+            <div class="experience-block">
+                <h3>Leadership and Community Involvement</h3>
+
                 <p>
-                    Building intelligent applications and
-                    exploring how AI can solve real-world problems.
+                    Outside of technology, I have participated
+                    in community service initiatives, youth
+                    leadership, and educational outreach.
+                    These experiences have helped me develop
+                    communication, teamwork, and leadership skills.
                 </p>
             </div>
 
-            <div class="interest-card">
-                <h3>Cybersecurity</h3>
+            <div class="experience-block">
+                <h3>Music and Personal Interests</h3>
+
                 <p>
-                    Hardware security, system protection,
-                    and understanding vulnerabilities in technology.
+                    Beyond engineering, I enjoy Carnatic music,
+                    mridangam, robotics, and exploring new
+                    technologies.
                 </p>
             </div>
 
-        </div>
-
-        <h2>Beyond Engineering</h2>
-
-        <p>
-            Outside of academics, I enjoy Carnatic music,
-            robotics, and exploring new technologies.
-            Music has been an important part of my life,
-            and I have pursued both Carnatic singing and
-            mridangam.
-        </p>
-
-        <p>
-            I also enjoy working on independent projects,
-            learning new technical skills, and collaborating
-            with others to turn ideas into practical solutions.
-        </p>
-
-        <div class="quote">
-            I'm driven by curiosity and a desire to understand
-            not just what technology can do, but how it works
-            and how I can help build what comes next.
-        </div>
+        </section>
 
     </main>
 </div>
