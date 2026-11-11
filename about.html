@@ -23,7 +23,7 @@ body {
 .site {
     width: 100%;
     max-width: 1120px;
-    min-height: 850px;
+    min-height: 100vh;
     margin: auto;
     background: white;
     position: relative;
@@ -59,12 +59,12 @@ body {
 }
 
 .content {
-    padding: 65px 85px;
+    padding: 65px 85px 80px;
 }
 
 .page-title {
     text-align: center;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 500;
     margin-bottom: 25px;
 }
@@ -72,8 +72,9 @@ body {
 hr {
     border: none;
     height: 2px;
-    background: #222222;
-    margin-bottom: 55px;
+    background: #333333;
+    margin: 0 auto 55px;
+    width: 85%;
 }
 
 .section {
@@ -82,53 +83,91 @@ hr {
 
 .section h2 {
     text-align: center;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 28px;
 }
 
 .section h3 {
-    font-size: 15px;
-    margin: 25px 0 12px;
+    text-align: center;
+    font-size: 14px;
+    margin: 22px 0 15px;
 }
 
 .section p {
-    font-size: 14px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.6;
     color: #555555;
     margin-bottom: 15px;
+}
+
+.section strong {
+    color: #222222;
+}
+
+.section a {
+    color: #555555;
+    text-decoration: underline;
 }
 
 .center {
     text-align: center;
 }
 
+/* Courses stay side by side */
 .course-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
     text-align: center;
-    line-height: 2.2;
+    font-size: 13px;
+    line-height: 1.7;
     color: #555555;
-    font-size: 14px;
 }
 
+.course-list span {
+    white-space: nowrap;
+}
+
+/* Skills aligned in two columns */
 .skills {
+    width: 100%;
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 18px 25px;
-    font-size: 14px;
-    line-height: 1.7;
+    grid-template-columns: 165px 1fr;
+    column-gap: 15px;
+    row-gap: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 15px;
 }
 
 .skill-name {
     font-weight: bold;
+    color: #222222;
 }
 
 .skill-description {
     color: #555555;
 }
 
+/* Experience formatting */
+.experience-intro {
+    margin-bottom: 20px;
+}
+
 .experience-block {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
+}
+
+.experience-block h3 {
+    margin-bottom: 18px;
+}
+
+.experience-block p {
+    margin-bottom: 13px;
 }
 
 @media (max-width: 650px) {
@@ -163,12 +202,16 @@ hr {
     }
 
     .skills {
-        grid-template-columns: 1fr;
-        gap: 5px;
+        grid-template-columns: 125px 1fr;
+        padding: 0;
     }
 
-    .skill-description {
-        margin-bottom: 15px;
+    .course-list {
+        gap: 8px 12px;
+    }
+
+    .course-list span {
+        white-space: normal;
     }
 }
 </style>
@@ -193,39 +236,43 @@ hr {
 
         <!-- EDUCATION -->
         <section class="section">
+
             <h2>Education</h2>
 
             <p>
-                I'm currently studying Computer Engineering at
-                <strong>Georgia Institute of Technology</strong>.
-                My academic interests include digital systems,
-                computer architecture, semiconductor technology,
-                and hardware design.
+                Currently, I'm studying <strong>Computer Engineering</strong>
+                at <strong>Georgia Institute of Technology</strong>.
+                I'm interested in digital hardware, processor architecture,
+                semiconductor technology, and computer systems.
             </p>
 
             <div class="center">
-                <h3>Relevant Coursework</h3>
+
+                <h3>Relevant Courses I've Taken:</h3>
 
                 <div class="course-list">
-                    CS 1301 · Introduction to Computing<br>
-                    MATH 1554 · Linear Algebra<br>
-                    APPH 1040 · Scientific Foundations of Health<br>
-                    HTS 2084 · The World Today
+                    <span>Introduction to Computing</span>
+                    <span>Linear Algebra</span>
+                    <span>Calculus</span>
+                    <span>Computer Science</span>
                 </div>
 
-                <h3>Academic Interests</h3>
+                <h3>In Progress:</h3>
 
                 <div class="course-list">
-                    Digital Logic Design · Processor Architecture<br>
-                    VLSI Design · Computer Organization<br>
-                    Hardware Security · Embedded Systems
+                    <span>CS 1301</span>
+                    <span>MATH 1554</span>
+                    <span>APPH 1040</span>
+                    <span>HTS 2084</span>
                 </div>
+
             </div>
         </section>
 
         <!-- SKILLS -->
         <section class="section">
-            <h2>Technical Skills</h2>
+
+            <h2>Skills</h2>
 
             <div class="skills">
 
@@ -244,16 +291,14 @@ hr {
                     FastAPI, REST APIs, PostgreSQL
                 </div>
 
-                <div class="skill-name">Artificial Intelligence</div>
+                <div class="skill-name">AI Development</div>
                 <div class="skill-description">
-                    Large Language Models, Prompt Engineering,
-                    Vector Databases
+                    Large Language Models, Prompt Engineering, Vector Databases
                 </div>
 
                 <div class="skill-name">Cybersecurity</div>
                 <div class="skill-description">
-                    Network Security, CTF Challenges,
-                    Wireshark, Nmap
+                    Network Security, CTFs, Wireshark, Nmap
                 </div>
 
                 <div class="skill-name">Tools</div>
@@ -264,65 +309,62 @@ hr {
             </div>
         </section>
 
-        <!-- EXPERIENCE AND ACTIVITIES -->
+        <!-- EXPERIENCE -->
         <section class="section">
+
             <h2>Experience and Activities</h2>
 
-            <p>
-                I've developed technical and collaborative skills
-                through internships, independent projects,
-                extracurricular activities, and leadership
-                experiences.
+            <p class="experience-intro">
+                I've developed technical and professional skills through
+                internships, personal projects, extracurricular activities,
+                and leadership experiences.
             </p>
 
             <div class="experience-block">
-                <h3>Software Development</h3>
+
+                <h3>Software</h3>
 
                 <p>
-                    At <strong>Spydr</strong>, I contributed to
-                    developing an AI-powered platform, working on
-                    user interfaces, backend API functionality,
-                    data ingestion, and LLM-based research features.
+                    I contributed to the development of an AI-powered platform
+                    at <strong>Spydr</strong>, working on frontend interfaces,
+                    backend APIs, data ingestion, and AI-powered research features.
                 </p>
 
                 <p>
-                    At <strong>iVue Robotics</strong>, I gained
-                    experience building web applications using
-                    JavaScript, Node.js, HTML, and CSS.
+                    At <strong>iVue Robotics</strong>, I gained experience
+                    developing web applications using JavaScript, Node.js,
+                    HTML, and CSS.
                 </p>
+
             </div>
 
             <div class="experience-block">
-                <h3>Technical Projects and Research</h3>
+
+                <h3>Technical Projects</h3>
 
                 <p>
-                    I enjoy exploring applications of artificial
-                    intelligence, cybersecurity, and computer
-                    engineering through personal projects and
-                    technical experimentation.
+                    I've worked on projects involving artificial intelligence,
+                    web development, robotics, and cybersecurity. I enjoy
+                    building applications that combine software and engineering.
                 </p>
+
             </div>
 
             <div class="experience-block">
-                <h3>Leadership and Community Involvement</h3>
+
+                <h3>Leadership and Activities</h3>
 
                 <p>
-                    Outside of technology, I have participated
-                    in community service initiatives, youth
-                    leadership, and educational outreach.
-                    These experiences have helped me develop
-                    communication, teamwork, and leadership skills.
+                    Through community service and leadership initiatives,
+                    I've helped organize events, lead volunteers, and support
+                    educational outreach programs.
                 </p>
-            </div>
-
-            <div class="experience-block">
-                <h3>Music and Personal Interests</h3>
 
                 <p>
-                    Beyond engineering, I enjoy Carnatic music,
-                    mridangam, robotics, and exploring new
-                    technologies.
+                    I also enjoy Carnatic music, mridangam, robotics,
+                    and exploring new technologies.
                 </p>
+
             </div>
 
         </section>
