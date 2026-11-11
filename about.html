@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Prahlad Krishna</title>
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eeeeee;
+    color: #222222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 25px;
+}
+
+.site {
+    width: 100%;
+    max-width: 1120px;
+    min-height: 700px;
+    background: white;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
+}
+
+.sidebar {
+    position: absolute;
+    left: -45px;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+}
+
+.sidebar a {
+    background: #222222;
+    color: white;
+    text-decoration: none;
+    padding: 23px 13px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 3px;
+    font-size: 13px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #555555;
+}
+
+.content {
+    width: 100%;
+    padding: 65px 75px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #111111;
+}
+
+.subtitle {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 35px 0 14px;
+    color: #222222;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.interest-card {
+    background: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.interest-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.interest-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.quote {
+    border-left: 3px solid #222222;
+    padding: 12px 20px;
+    margin: 35px 0;
+    color: #666666;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    .site {
+        min-height: 650px;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        background: white;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .sidebar a {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 12px 10px;
+        border-radius: 6px;
+        margin: 0;
+    }
+
+    .content {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+    <nav class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <main class="content">
+
+        <h1>About Me</h1>
+        <p class="subtitle">
+            Computer Engineering Student | Georgia Tech
+        </p>
+
+        <h2>Who I Am</h2>
+
+        <p>
+            I'm Prahlad Krishna, a Computer Engineering student
+            at the Georgia Institute of Technology. I'm interested
+            in understanding how technology works at every level,
+            from software applications to the underlying hardware
+            that powers modern computing systems.
+        </p>
+
+        <p>
+            My experiences in software development, artificial
+            intelligence, and cybersecurity have helped me develop
+            a strong foundation in problem-solving and building
+            technology-driven solutions.
+        </p>
+
+        <h2>Academic Interests</h2>
+
+        <p>
+            I'm particularly interested in computer architecture
+            and the design of digital systems. I want to explore
+            how processors are designed, how hardware components
+            interact, and how semiconductor technology continues
+            to advance computing.
+        </p>
+
+        <div class="interest-grid">
+
+            <div class="interest-card">
+                <h3>Digital Hardware</h3>
+                <p>
+                    Logic design, digital circuits, processor
+                    architecture, and hardware development.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Chip Design</h3>
+                <p>
+                    Exploring semiconductor technology,
+                    integrated circuits, and hardware design.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Building intelligent applications and
+                    exploring how AI can solve real-world problems.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Cybersecurity</h3>
+                <p>
+                    Hardware security, system protection,
+                    and understanding vulnerabilities in technology.
+                </p>
+            </div>
+
+        </div>
+
+        <h2>Beyond Engineering</h2>
+
+        <p>
+            Outside of academics, I enjoy Carnatic music,
+            robotics, and exploring new technologies.
+            Music has been an important part of my life,
+            and I have pursued both Carnatic singing and
+            mridangam.
+        </p>
+
+        <p>
+            I also enjoy working on independent projects,
+            learning new technical skills, and collaborating
+            with others to turn ideas into practical solutions.
+        </p>
+
+        <div class="quote">
+            I'm driven by curiosity and a desire to understand
+            not just what technology can do, but how it works
+            and how I can help build what comes next.
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
