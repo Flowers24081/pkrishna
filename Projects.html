@@ -1,1 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Prahlad Krishna</title>
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eeeeee;
+    color: #222222;
+    min-height: 100vh;
+    padding: 45px 25px;
+}
+
+.site {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* NAVIGATION */
+
+.sidebar {
+    position: absolute;
+    left: -45px;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+}
+
+.sidebar a {
+    background: #222222;
+    color: white;
+    text-decoration: none;
+    padding: 23px 13px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 3px;
+    font-size: 13px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #555555;
+}
+
+/* MAIN CONTENT */
+
+.content {
+    padding: 65px 85px 90px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: #222222;
+    margin: 0 auto 55px;
+    width: 85%;
+}
+
+/* PROJECT SECTIONS */
+
+.project {
+    margin-bottom: 85px;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.project-category {
+    text-align: center;
+    font-size: 12px;
+    color: #777777;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+}
+
+.project-description {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 18px;
+}
+
+.project-description strong {
+    color: #222222;
+}
+
+/* PROJECT IMAGES */
+
+.project-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    max-height: 560px;
+    object-fit: contain;
+    margin: 25px auto;
+    border-radius: 5px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 25px 0;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 5px;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 12px;
+    color: #777777;
+    margin-top: 8px;
+}
+
+/* PROJECT DETAILS */
+
+.detail-heading {
+    text-align: center;
+    font-size: 15px;
+    margin: 30px 0 15px;
+}
+
+.project-list {
+    padding-left: 24px;
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.project-list li {
+    margin-bottom: 5px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin: 22px 0;
+}
+
+.tech-stack span {
+    background: #f0f0f0;
+    color: #444444;
+    padding: 8px 13px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.project-links a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #777777;
+    padding-bottom: 3px;
+}
+
+.project-links a:hover {
+    color: #777777;
+}
+
+.project-divider {
+    border: none;
+    height: 1px;
+    background: #dddddd;
+    margin: 70px auto;
+    width: 90%;
+}
+
+/* VIDEO */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 25px 0;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    color: #888888;
+    font-size: 12px;
+    padding: 25px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .site {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .sidebar a {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 12px 10px;
+        border-radius: 6px;
+        margin: 0;
+    }
+
+    .content {
+        padding: 40px 22px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid img {
+        height: auto;
+        max-height: 350px;
+    }
+
+    .project {
+        margin-bottom: 55px;
+    }
+
+    .project-divider {
+        margin: 45px auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+    <!-- NAVIGATION -->
+    <nav class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+
+    <main class="content">
+
+        <h1 class="page-title">Projects</h1>
+
+        <p class="page-subtitle">
+            Personal Projects | Software Engineering | Artificial Intelligence | Cybersecurity
+        </p>
+
+        <hr>
+
+
+        <!-- ===================================== -->
+        <!-- PROJECT 1: YOURTASTE -->
+        <!-- ===================================== -->
+
+        <section class="project">
+
+            <h2 class="project-title">
+                YourTaste | AI-Powered Food Discovery
+            </h2>
+
+            <p class="project-category">
+                Personal Project · Founder & Developer · Fall 2025
+            </p>
+
+            <p class="project-description">
+                <strong>YourTaste</strong> is an AI-powered platform I independently
+                developed to simplify plant-based living by bringing restaurant
+                discovery, personalized recipe generation, and meal planning
+                together in one application.
+
+                The idea came from my own experience trying to find restaurants
+                that accommodate vegetarian diets and figuring out what to cook
+                using ingredients already available at home. I wanted to create
+                a platform that made both processes easier and more convenient.
+            </p>
+
+            <p class="project-description">
+                The platform supports personalized restaurant recommendations
+                based on dietary preferences, location, cuisine, and other
+                filters. It also includes an AI-powered assistant called
+                <strong>VegBot</strong>, which helps users explore food options,
+                receive suggestions, and find restaurants that fit their needs.
+            </p>
+
+            <img
+                src="images/yourtaste-main.png"
+                alt="YourTaste application homepage"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">AI Recipe Generation & Ingredient Scanning</h3>
+
+            <p class="project-description">
+                The recipe generation feature allows users to provide ingredients
+                they already have and receive personalized recipe suggestions.
+                I integrated the Gemini API to process ingredient information
+                and generate recipes while accounting for dietary restrictions
+                and preferences.
+
+                The ingredient scanner also provides an interface for identifying
+                ingredients through photos, image uploads, and barcodes.
+            </p>
+
+            <div class="image-grid">
+
+                <div>
+                    <img
+                        src="images/yourtaste-recipe.png"
+                        alt="YourTaste AI recipe generator"
+                    >
+                    <p class="image-caption">AI Recipe Generator and Ingredient Scanner</p>
+                </div>
+
+                <div>
+                    <img
+                        src="images/yourtaste-meal-planner.png"
+                        alt="YourTaste weekly meal planner"
+                    >
+                    <p class="image-caption">Weekly Meal Planner</p>
+                </div>
+
+            </div>
+
+            <h3 class="detail-heading">Restaurant Discovery & Personalization</h3>
+
+            <p class="project-description">
+                I integrated the Google Maps API to support location-based
+                restaurant discovery. Users can search by location and apply
+                filters for dietary preferences such as vegetarian, vegan,
+                Jain, kosher, and gluten-free.
+
+                These features make it easier to find restaurants that align
+                with individual dietary requirements.
+            </p>
+
+            <img
+                src="images/yourtaste-restaurant.png"
+                alt="YourTaste restaurant discovery and dietary filters"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">Development & Technical Contributions</h3>
+
+            <ul class="project-list">
+                <li>Independently designed and developed the application using Lovable as the development foundation.</li>
+                <li>Integrated Gemini API for AI-powered recipe generation and personalized food suggestions.</li>
+                <li>Connected Google Maps API to enable location-based restaurant discovery and filtering.</li>
+                <li>Developed personalized dietary filters, chatbot functionality, and meal-planning features.</li>
+                <li>Worked with Supabase to support application data and backend functionality.</li>
+                <li>Grew the platform to 50+ users and received international hackathon recognition.</li>
+            </ul>
+
+            <h3 class="detail-heading">Technologies & Tools</h3>
+
+            <div class="tech-stack">
+                <span>Gemini API</span>
+                <span>Google Maps API</span>
+                <span>Lovable</span>
+                <span>Supabase</span>
+                <span>AI / ML</span>
+                <span>API Integration</span>
+            </div>
+
+            <div class="project-links">
+                <a href="YOURTASTE_LIVE_LINK" target="_blank">View Live Application</a>
+                <a href="YOURTASTE_VIDEO_LINK" target="_blank">Watch Project Demo</a>
+                <a href="YOURTASTE_GITHUB_LINK" target="_blank">GitHub Repository</a>
+            </div>
+
+        </section>
+
+
+        <hr class="project-divider">
+
+
+        <!-- ===================================== -->
+        <!-- PROJECT 2: SPYDR -->
+        <!-- ===================================== -->
+
+        <section class="project">
+
+            <h2 class="project-title">
+                Spydr | AI Knowledge Graph & Research Platform
+            </h2>
+
+            <p class="project-category">
+                Professional Project · AI Research & Product Development
+            </p>
+
+            <p class="project-description">
+                <strong>Spydr</strong> is an AI research platform designed to
+                organize, connect, and retrieve information through an
+                interconnected knowledge graph.
+
+                The platform transforms information into structured networks
+                of entities, concepts, and relationships. Rather than treating
+                information as isolated documents, users can explore connections
+                between different topics through an interactive graph.
+            </p>
+
+            <img
+                src="images/spydr-knowledge-graph.png"
+                alt="Spydr interactive knowledge graph"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">Knowledge Graph Exploration</h3>
+
+            <p class="project-description">
+                The knowledge graph interface represents information through
+                nodes and edges. Individual nodes represent entities such as
+                people, organizations, technologies, and concepts, while
+                connections illustrate relationships between them.
+
+                This allows users to visually explore how different pieces
+                of information relate to one another and navigate complex
+                collections of knowledge.
+            </p>
+
+            <img
+                src="images/spydr-dashboard.png"
+                alt="Spydr knowledge exploration interface"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">Deep Research & Backend Development</h3>
+
+            <p class="project-description">
+                During my internship as an AI Research & Product Development
+                Intern, I contributed to Spydr's Deep Research system.
+                My work focused on improving how user queries were refined,
+                broken into smaller research questions, and processed into
+                structured results.
+            </p>
+
+            <p class="project-description">
+                I worked on prompt refinement, sub-query generation,
+                keyword-injection logic, and JSON output formatting to improve
+                retrieval accuracy. I also contributed to backend functionality,
+                including rate limiting and token management, and helped
+                integrate FastAPI with Neo4j to support the platform's
+                knowledge graph infrastructure.
+            </p>
+
+            <h3 class="detail-heading">My Technical Contributions</h3>
+
+            <ul class="project-list">
+                <li>Refined research prompts and developed sub-query generation logic for the Deep Research AI product.</li>
+                <li>Implemented keyword-injection techniques to improve information retrieval and research relevance.</li>
+                <li>Tuned structured JSON outputs to improve consistency between AI-generated results and backend processing.</li>
+                <li>Implemented rate limiting and token management to support controlled and scalable system usage.</li>
+                <li>Contributed to backend and graph database integration using FastAPI and Neo4j.</li>
+                <li>Tested the system across 10+ domains and contributed to a platform serving 300+ users.</li>
+            </ul>
+
+            <h3 class="detail-heading">Technologies & Tools</h3>
+
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>LLMs</span>
+                <span>Prompt Engineering</span>
+                <span>Neo4j</span>
+                <span>PostgreSQL</span>
+                <span>Vector Databases</span>
+            </div>
+
+            <div class="project-links">
+                <a href="SPYDR_GITHUB_LINK" target="_blank">GitHub Repository</a>
+                <a href="SPYDR_LIVE_LINK" target="_blank">Visit Spydr</a>
+            </div>
+
+        </section>
+
+
+        <hr class="project-divider">
+
+
+        <!-- ===================================== -->
+        <!-- PROJECT 3: CYBERSECURITY -->
+        <!-- ===================================== -->
+
+        <section class="project">
+
+            <h2 class="project-title">
+                Cybersecurity | Networking & Security Labs
+            </h2>
+
+            <p class="project-category">
+                Technical Exploration · Networking · Cybersecurity
+            </p>
+
+            <p class="project-description">
+                I have explored cybersecurity through hands-on networking
+                exercises, Linux environments, security challenges, and
+                capture-the-flag competitions.
+
+                These experiences have helped me develop a practical
+                understanding of network configuration, system administration,
+                traffic analysis, and common cybersecurity tools.
+            </p>
+
+            <div class="image-grid">
+
+                <div>
+                    <img
+                        src="images/cyber-kali-terminal.png"
+                        alt="Kali Linux terminal"
+                    >
+                    <p class="image-caption">Kali Linux Environment</p>
+                </div>
+
+                <div>
+                    <img
+                        src="images/cyber-networking.png"
+                        alt="Networking lab terminal"
+                    >
+                    <p class="image-caption">Network Configuration</p>
+                </div>
+
+            </div>
+
+            <h3 class="detail-heading">Networking & Packet Analysis</h3>
+
+            <p class="project-description">
+                Through networking labs, I have worked with command-line
+                networking utilities and tools used to inspect network
+                configurations and troubleshoot connectivity.
+
+                I have also explored packet analysis with Wireshark to
+                understand network traffic, protocols, and communication
+                between devices.
+            </p>
+
+            <img
+                src="images/cyber-wireshark.png"
+                alt="Wireshark packet analysis"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">Technical Areas</h3>
+
+            <ul class="project-list">
+                <li>Linux command-line environments and system administration.</li>
+                <li>Network configuration and troubleshooting.</li>
+                <li>Network scanning and reconnaissance using Nmap.</li>
+                <li>Packet inspection and network traffic analysis using Wireshark.</li>
+                <li>Hands-on cybersecurity challenges and CTF exercises.</li>
+            </ul>
+
+            <h3 class="detail-heading">Tools & Technologies</h3>
+
+            <div class="tech-stack">
+                <span>Kali Linux</span>
+                <span>Linux</span>
+                <span>Wireshark</span>
+                <span>Nmap</span>
+                <span>Cybersecurity CTFs</span>
+                <span>Networking</span>
+            </div>
+
+            <div class="project-links">
+                <a href="CYBER_GITHUB_LINK" target="_blank">GitHub Repositories</a>
+            </div>
+
+        </section>
+
+
+        <hr class="project-divider">
+
+
+        <!-- ===================================== -->
+        <!-- PROJECT 4: IVUE ROBOTICS -->
+        <!-- ===================================== -->
+
+        <section class="project">
+
+            <h2 class="project-title">
+                iVue Robotics | Web Development
+            </h2>
+
+            <p class="project-category">
+                Professional Project · Web Development
+            </p>
+
+            <p class="project-description">
+                iVue Robotics is a robotics and media company focused on
+                autonomous drone systems and technology content.
+
+                As a Web Development Intern, I contributed to the development
+                and maintenance of web platforms supporting iVue Robotics,
+                iVue Media, and iVue News. My work focused on creating
+                accessible, user-focused web experiences and improving
+                the online presence of the company's different brands.
+            </p>
+
+            <img
+                src="images/ivue-homepage.png"
+                alt="iVue Robotics website"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">Web Development & Product Launches</h3>
+
+            <p class="project-description">
+                I designed and deployed web pages supporting several company
+                initiatives, including the Air Drone series, Operator OS,
+                and the Autonomous Humanity podcast.
+
+                These projects involved developing frontend interfaces,
+                organizing website content, and maintaining web platforms
+                across multiple brand channels.
+            </p>
+
+            <img
+                src="images/ivue-project.png"
+                alt="iVue web development project"
+                class="project-image"
+            >
+
+            <h3 class="detail-heading">My Technical Contributions</h3>
+
+            <ul class="project-list">
+                <li>Built and maintained web platforms for iVue Robotics, Media, and News.</li>
+                <li>Developed frontend interfaces using JavaScript, Node.js, HTML, and CSS.</li>
+                <li>Designed and deployed user-focused web pages for product and content launches.</li>
+                <li>Supported the Air Drone series, Operator OS, and Autonomous Humanity podcast launches.</li>
+                <li>Contributed to web platforms reaching 500+ visitors.</li>
+            </ul>
+
+            <h3 class="detail-heading">Technologies & Tools</h3>
+
+            <div class="tech-stack">
+                <span>JavaScript</span>
+                <span>Node.js</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Frontend Development</span>
+            </div>
+
+            <div class="project-links">
+                <a href="IVUE_GITHUB_LINK" target="_blank">GitHub Repository</a>
+                <a href="IVUE_LIVE_LINK" target="_blank">View Website</a>
+            </div>
+
+        </section>
+
+
+        <hr>
+
+        <footer class="footer">
+            Prahlad Krishna | Computer Engineering | Georgia Institute of Technology
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>
