@@ -6,6 +6,67 @@
 <title>Projects & Experiences | Prahlad Krishna</title>
 
 <style>
+/* PROJECT NAVIGATION CARDS */
+.project-navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0 auto 55px;
+    width: 85%;
+}
+
+.project-card {
+    display: block;
+    padding: 22px;
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #222222;
+    transition: 0.2s ease;
+}
+
+.project-card:hover {
+    background: #eeeeee;
+    border-color: #999999;
+    transform: translateY(-3px);
+}
+
+.project-card-category {
+    font-size: 10px;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    margin-bottom: 9px;
+}
+
+.project-card h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 13px;
+}
+
+.project-card-link {
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+}
+
+@media (max-width: 650px) {
+    .project-navigation {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+    
 * {
     margin: 0;
     padding: 0;
@@ -291,12 +352,50 @@ hr {
         </p>
 
         <hr>
+<!-- PROJECT NAVIGATION CARDS -->
+<div class="project-navigation">
 
+    <a href="#yourtaste" class="project-card">
+        <div class="project-card-category">Personal Project · AI</div>
+        <h3>YourTaste</h3>
+        <p>An AI-powered platform for restaurant discovery, personalized recipes, and meal planning.</p>
+        <div class="project-card-link">Explore Project →</div>
+    </a>
+
+    <a href="#spydr" class="project-card">
+        <div class="project-card-category">Internship · AI Development</div>
+        <h3>Spydr</h3>
+        <p>Contributed to an AI-powered knowledge graph and deep research platform.</p>
+        <div class="project-card-link">Explore Project →</div>
+    </a>
+
+    <a href="#cybersecurity" class="project-card">
+        <div class="project-card-category">Technical Exploration · Security</div>
+        <h3>Cybersecurity</h3>
+        <p>Hands-on experience with networking, Linux, packet analysis, and security challenges.</p>
+        <div class="project-card-link">Explore Project →</div>
+    </a>
+
+    <a href="#ivue" class="project-card">
+        <div class="project-card-category">Internship · Web Development</div>
+        <h3>iVue</h3>
+        <p>Developed web platforms and digital experiences during a robotics internship.</p>
+        <div class="project-card-link">Explore Project →</div>
+    </a>
+
+    <a href="#ygt" class="project-card">
+        <div class="project-card-category">Job Shadowing · Technology</div>
+        <h3>YGT</h3>
+        <p>Explored professional technology environments and engineering careers.</p>
+        <div class="project-card-link">Explore Experience →</div>
+    </a>
+
+</div>
         <!-- ====================================== -->
         <!-- PROJECT 1: YOURTASTE -->
         <!-- ====================================== -->
 
-        <section class="project">
+        <section class="project" id="yourtaste">
 
             <h2 class="project-title">
                 YourTaste | AI-Powered Food Discovery
@@ -482,7 +581,7 @@ hr {
         <!-- PROJECT 2: SPYDR -->
         <!-- ====================================== -->
 
-        <section class="project">
+        <section class="project" id="spydr">
 
             <h2 class="project-title">
                 Spydr | AI Knowledge Graph & Deep Research
@@ -667,7 +766,7 @@ hr {
         <!-- PROJECT 3: CYBERSECURITY -->
         <!-- ====================================== -->
 
-        <section class="project">
+        <section class="project" id="cybersecurity">
 
             <h2 class="project-title">
                 Cybersecurity | Networking & Security Labs
@@ -778,7 +877,7 @@ hr {
         <!-- PROJECT 4: IVUE -->
         <!-- ====================================== -->
 
-        <section class="project">
+        <section class="project" id="ivue">
 
             <h2 class="project-title">
                 iVue | Robotics, Media & Web Platform Development
@@ -918,7 +1017,7 @@ hr {
         <!-- EXPERIENCE: YGT -->
         <!-- ====================================== -->
 
-        <section class="project">
+        <section class="project" id="ygt">
 
             <h2 class="project-title">
                 YGT | Technology Job Shadowing & System Design Exploration
