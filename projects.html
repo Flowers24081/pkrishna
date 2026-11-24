@@ -1122,10 +1122,9 @@ hr {
         The Arduino Mini Electronic Piano is an embedded systems project
         exploring how software, digital inputs, and electronic components
         work together to create a functional musical instrument. My goal
-        was to design an eight-key piano using an Arduino Uno, push buttons,
-        LEDs, and a piezo buzzer. Each button represents a musical note,
-        while its corresponding LED provides visual feedback when the
-        key is pressed.
+        was to design an eight-key piano using an Arduino Uno, eight push
+        buttons, and a piezo buzzer. Each button represents a different
+        musical note, which the Arduino generates through the buzzer.
     </p>
 
     <h3 class="detail-heading">
@@ -1137,15 +1136,15 @@ hr {
         between programming and physical electronics through something
         interactive. Rather than simply writing a program that produces
         output on a computer, I wanted to create a system where physical
-        inputs control both sound and light.
+        inputs directly control sound.
     </p>
 
     <p class="project-description">
         I planned the system around an Arduino Uno and a breadboard.
-        The design uses eight push buttons as inputs, eight LEDs as
-        visual indicators, and a piezo buzzer to produce musical notes.
-        Each component has a specific role, and the Arduino connects
-        the hardware through its digital input and output pins.
+        The design uses eight push buttons as inputs and a piezo buzzer
+        to produce musical notes. Each button corresponds to a different
+        frequency, allowing the Arduino to turn physical button presses
+        into sound through its digital input and output pins.
     </p>
 
     <img src="images/Design.png"
@@ -1154,7 +1153,7 @@ hr {
 
     <p class="image-caption">
         Hardware design showing the Arduino Uno, breadboard, eight
-        piano buttons, LED indicators, wiring, and buzzer.
+        piano buttons, jumper wires, and piezo buzzer.
     </p>
 
     <h3 class="detail-heading">
@@ -1163,20 +1162,21 @@ hr {
 
     <p class="project-description">
         Before programming the system, I planned how the components
-        would connect to the Arduino. Each push button is assigned
-        an individual digital input, while the LEDs use separate
-        output pins. The buzzer is connected to another output pin
-        so the Arduino can generate different sound frequencies.
+        would connect to the Arduino. Each of the eight push buttons
+        is assigned an individual digital input, while the piezo
+        buzzer is connected to an output pin. The Arduino uses these
+        connections to detect button presses and generate the
+        corresponding musical frequencies.
     </p>
 
     <p class="project-description">
         I used the Arduino's internal pull-up resistors through
         INPUT_PULLUP, allowing the buttons to connect to ground
         without requiring separate external pull-down resistors.
-        The LEDs use current-limiting resistors to help protect
-        the components. Planning these connections helped me
-        understand how a circuit's physical layout must correspond
-        to the pin assignments in the program.
+        This configuration simplifies the circuit while allowing
+        the Arduino to detect button presses. Planning these
+        connections helped me understand how a circuit's physical
+        layout corresponds to the pin assignments in the program.
     </p>
 
     <img src="images/SimplePiano.jpg"
@@ -1194,17 +1194,16 @@ hr {
 
     <p class="project-description">
         I developed the Arduino program using the Arduino IDE.
-        The code organizes the button pins, LED pins, and musical
-        frequencies into arrays, making it easier to associate
-        each piano key with its corresponding output.
+        The code organizes the button pins and musical frequencies
+        into arrays, making it easier to associate each piano key
+        with its corresponding musical note.
     </p>
 
     <p class="project-description">
-        The program uses pinMode() to configure the hardware,
-        digitalRead() to detect button presses, and digitalWrite()
-        to control the LEDs. The tone() function generates the
-        corresponding musical frequency through the buzzer, while
-        noTone() stops the sound when no key is pressed.
+        The program uses pinMode() to configure the hardware and
+        digitalRead() to detect button presses. The tone() function
+        generates the corresponding musical frequency through the
+        buzzer, while noTone() stops the sound when no key is pressed.
     </p>
 
     <p class="project-description">
@@ -1220,7 +1219,7 @@ hr {
          class="project-image">
 
     <p class="image-caption">
-        Arduino program defining the button and LED pin assignments,
+        Arduino program defining the eight button pin assignments,
         musical frequencies, input detection, and sound generation.
     </p>
 
@@ -1237,13 +1236,12 @@ hr {
     </p>
 
     <p class="project-description">
-        Another important design consideration was making the
-        system provide both audio and visual feedback. Adding
-        LEDs meant assigning additional output pins and ensuring
-        that each indicator corresponded to the correct button.
-        This expanded the project beyond a basic buzzer circuit
-        and introduced another layer of hardware and software
-        coordination.
+        One challenge was understanding how INPUT_PULLUP changes
+        the way button presses are detected. I also had to make
+        sure that each button corresponded to the correct pin
+        and musical frequency. A key part of the project was
+        coordinating the physical circuit with the Arduino code
+        so that each input could produce its intended musical note.
     </p>
 
     <p class="project-description">
@@ -1259,7 +1257,7 @@ hr {
 
     <ul class="project-list">
         <li><strong>Digital inputs and outputs:</strong> Understanding how a microcontroller reads button signals and controls external components.</li>
-        <li><strong>Circuit design:</strong> Planning component connections, pin assignments, ground connections, and LED current-limiting resistors.</li>
+        <li><strong>Circuit design:</strong> Planning component connections, digital pin assignments, and ground connections.</li>
         <li><strong>Embedded programming:</strong> Writing Arduino code that connects software instructions to physical hardware.</li>
         <li><strong>Digital logic:</strong> Understanding HIGH and LOW states and how INPUT_PULLUP changes button behavior.</li>
         <li><strong>Signal generation:</strong> Using frequency values and the tone() function to produce different musical pitches.</li>
