@@ -1104,7 +1104,159 @@ hr {
             </div>
 
         </section>
+<!-- DISCOVERY PROJECT: ARDUINO MINI ELECTRONIC PIANO -->
+<section id="discovery-project">
 
+    <div class="section-heading">
+        <p class="project-category">ECE 1100 · Fall 2026</p>
+        <h2>Arduino Mini Electronic Piano</h2>
+        <p>Exploring the connection between software, circuits, and sound through an eight-key electronic piano.</p>
+    </div>
+
+    <div class="project-content">
+
+        <h3>Project Overview</h3>
+        <p>
+            For my ECE 1100 Discovery Project, I designed and assembled an Arduino-based
+            mini electronic piano. My original idea was to create a simple musical
+            instrument using eight push buttons, an Arduino Uno, and a piezo buzzer.
+            Each button represents a different musical note, allowing a user to play
+            individual notes by pressing the corresponding key. I chose this project
+            because it combines programming with physical electronics and demonstrates
+            how software instructions can control real-world hardware.
+        </p>
+
+        <p>
+            The project began with planning the circuit and identifying the components
+            needed to make the piano work. I used an Arduino Uno as the microcontroller,
+            a breadboard to organize the circuit, eight push buttons as inputs, and a
+            piezo buzzer to produce sound. I connected the buttons to individual digital
+            input pins and connected the buzzer to an output pin. This arrangement
+            allowed the Arduino to detect which button was pressed and respond with
+            the corresponding musical frequency.
+        </p>
+
+        <h3>The Design and Development Process</h3>
+        <p>
+            After planning the hardware, I developed the Arduino program using the
+            Arduino IDE. I created arrays to store the button pin assignments and
+            musical frequencies, which made it easier to associate each button with
+            its corresponding note. The program uses <code>pinMode()</code> to
+            configure the inputs, <code>digitalRead()</code> to detect button presses,
+            and <code>tone()</code> to generate the sound through the buzzer.
+            I also used <code>INPUT_PULLUP</code>, which allows the Arduino to detect
+            button presses without requiring separate pull-down resistors.
+        </p>
+
+        <p>
+            One important part of the process was understanding how the physical
+            circuit and software had to work together. The button connections needed
+            to match the pin numbers in the program, and the buzzer needed to be
+            connected to the correct output. I assembled the circuit on a breadboard
+            and organized the wiring so that each button had its own input. I also
+            used the Arduino IDE to compile the program and check for coding errors.
+            This helped me understand how to move from a project idea to an actual
+            hardware implementation.
+        </p>
+
+        <h3>Project Progress and Challenges</h3>
+        <p>
+            A major success was bringing the hardware and software components together
+            into one physical project. Working with multiple button inputs required
+            careful attention to wiring and pin assignments. I also had to understand
+            the behavior of the Arduino's internal pull-up resistors, since a pressed
+            button registers as LOW rather than HIGH when using <code>INPUT_PULLUP</code>.
+            Understanding this logic was important for making the program respond
+            correctly to user input.
+        </p>
+
+        <p>
+            Another challenge was translating musical notes into frequencies that
+            the Arduino could generate. Instead of treating the buzzer as a simple
+            on-and-off output, I learned how different frequency values produce
+            different pitches. Organizing the notes in an array made the program
+            easier to read and modify. Overall, the project gave me experience
+            troubleshooting both the code and the physical arrangement of components.
+        </p>
+
+        <h3>ECE Skills Gained</h3>
+        <p>
+            Through this project, I developed practical experience with breadboard
+            circuit assembly, microcontroller inputs and outputs, digital logic,
+            and embedded programming. I learned how to connect physical components
+            to an Arduino, read signals from push buttons, and use software to
+            control an electronic output. I also gained a better understanding of
+            how hardware and software interact within an embedded system.
+        </p>
+
+        <p>
+            These skills connect directly to my interest in computer engineering,
+            especially digital systems and hardware design. Although this project
+            was relatively small, it introduced me to the process of building a
+            system where the code depends on physical electrical connections.
+            It also strengthened my interest in learning more about microcontrollers,
+            digital circuits, and the relationship between hardware and software.
+        </p>
+
+        <h3>Project Outcome and Reflection</h3>
+        <p>
+            My final project brought my original idea into a physical Arduino
+            electronic piano with eight button inputs and a buzzer output. The
+            experience helped me understand that building an electronic system
+            involves more than writing code: the circuit design, component
+            connections, and program logic must all work together. I enjoyed
+            seeing how a relatively small amount of code could control physical
+            components and create something interactive.
+        </p>
+
+        <p>
+            This project increased my interest in the hardware side of computer
+            engineering. I would like to continue exploring embedded systems and
+            digital electronics, potentially expanding the piano with additional
+            features such as LED indicators, more notes, or improved sound control.
+            Overall, the Discovery Project gave me a practical introduction to
+            circuit assembly and microcontroller programming while helping me
+            connect classroom concepts to a hands-on engineering project.
+        </p>
+
+        <h3>Project Gallery</h3>
+
+        <div class="project-gallery">
+            <figure>
+                <img src="images/Design.png" alt="Photograph of the assembled Arduino piano circuit">
+                <figcaption>Physical Arduino piano circuit assembled on a breadboard.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/SimplePiano.jpg" alt="Arduino electronic piano circuit wiring diagram">
+                <figcaption>Circuit design showing the Arduino, button inputs, and buzzer connections.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/Code.png" alt="Arduino IDE displaying the electronic piano program">
+                <figcaption>Arduino IDE showing the piano program and successful compilation.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/PartOfLab.png" alt="Discovery project development documentation">
+                <figcaption>Additional project documentation and development progress.</figcaption>
+            </figure>
+        </div>
+
+        <h3>Technologies and Components</h3>
+        <div class="tech-stack">
+            <span>Arduino Uno</span>
+            <span>C++</span>
+            <span>Arduino IDE</span>
+            <span>Breadboard</span>
+            <span>Push Buttons</span>
+            <span>Piezo Buzzer</span>
+            <span>Digital I/O</span>
+            <span>Embedded Systems</span>
+        </div>
+
+    </div>
+</section>
         <hr>
 
         <footer class="footer">
