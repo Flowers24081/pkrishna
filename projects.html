@@ -1104,7 +1104,203 @@ hr {
             </div>
 
         </section>
+<!-- ====================================== -->
+<!-- DISCOVERY PROJECT: ARDUINO MINI PIANO -->
+<!-- ====================================== -->
 
+<section class="project" id="discovery-project">
+
+    <h2 class="project-title">
+        Arduino Mini Electronic Piano
+    </h2>
+
+    <p class="project-category">
+        ECE 1100 · Discovery Project · Fall 2026
+    </p>
+
+    <p class="project-description">
+        The Arduino Mini Electronic Piano is an embedded systems project
+        exploring how software, digital inputs, and electronic components
+        work together to create a functional musical instrument. My goal
+        was to design an eight-key piano using an Arduino Uno, push buttons,
+        LEDs, and a piezo buzzer. Each button represents a musical note,
+        while its corresponding LED provides visual feedback when the
+        key is pressed.
+    </p>
+
+    <h3 class="detail-heading">
+        The Idea & Project Design
+    </h3>
+
+    <p class="project-description">
+        I chose this project because I wanted to explore the relationship
+        between programming and physical electronics through something
+        interactive. Rather than simply writing a program that produces
+        output on a computer, I wanted to create a system where physical
+        inputs control both sound and light.
+    </p>
+
+    <p class="project-description">
+        I planned the system around an Arduino Uno and a breadboard.
+        The design uses eight push buttons as inputs, eight LEDs as
+        visual indicators, and a piezo buzzer to produce musical notes.
+        Each component has a specific role, and the Arduino connects
+        the hardware through its digital input and output pins.
+    </p>
+
+    <img src="images/Design.png"
+         alt="Arduino electronic piano hardware design"
+         class="project-image">
+
+    <p class="image-caption">
+        Hardware design showing the Arduino Uno, breadboard, eight
+        piano buttons, LED indicators, wiring, and buzzer.
+    </p>
+
+    <h3 class="detail-heading">
+        Circuit Design & Component Connections
+    </h3>
+
+    <p class="project-description">
+        Before programming the system, I planned how the components
+        would connect to the Arduino. Each push button is assigned
+        an individual digital input, while the LEDs use separate
+        output pins. The buzzer is connected to another output pin
+        so the Arduino can generate different sound frequencies.
+    </p>
+
+    <p class="project-description">
+        I used the Arduino's internal pull-up resistors through
+        INPUT_PULLUP, allowing the buttons to connect to ground
+        without requiring separate external pull-down resistors.
+        The LEDs use current-limiting resistors to help protect
+        the components. Planning these connections helped me
+        understand how a circuit's physical layout must correspond
+        to the pin assignments in the program.
+    </p>
+
+    <img src="images/SimplePiano.jpg"
+         alt="Circuit schematic for the Arduino electronic piano"
+         class="project-image">
+
+    <p class="image-caption">
+        Circuit schematic illustrating the Arduino connections
+        and the organization of the piano's electronic components.
+    </p>
+
+    <h3 class="detail-heading">
+        Programming & Embedded Systems
+    </h3>
+
+    <p class="project-description">
+        I developed the Arduino program using the Arduino IDE.
+        The code organizes the button pins, LED pins, and musical
+        frequencies into arrays, making it easier to associate
+        each piano key with its corresponding output.
+    </p>
+
+    <p class="project-description">
+        The program uses pinMode() to configure the hardware,
+        digitalRead() to detect button presses, and digitalWrite()
+        to control the LEDs. The tone() function generates the
+        corresponding musical frequency through the buzzer, while
+        noTone() stops the sound when no key is pressed.
+    </p>
+
+    <p class="project-description">
+        One important programming detail was understanding
+        INPUT_PULLUP logic. Unlike a typical input configuration,
+        a pressed button registers as LOW rather than HIGH.
+        Recognizing this behavior was essential to making the
+        button detection logic work correctly.
+    </p>
+
+    <img src="images/Code.png"
+         alt="Arduino IDE code for the eight-note electronic piano"
+         class="project-image">
+
+    <p class="image-caption">
+        Arduino program defining the button and LED pin assignments,
+        musical frequencies, input detection, and sound generation.
+    </p>
+
+    <h3 class="detail-heading">
+        Project Progress, Challenges & Problem Solving
+    </h3>
+
+    <p class="project-description">
+        A major part of the project was coordinating the hardware
+        design with the software. The pin assignments in the code
+        had to match the planned circuit connections. I also had
+        to consider how the Arduino interprets button inputs and
+        how different frequency values correspond to musical notes.
+    </p>
+
+    <p class="project-description">
+        Another important design consideration was making the
+        system provide both audio and visual feedback. Adding
+        LEDs meant assigning additional output pins and ensuring
+        that each indicator corresponded to the correct button.
+        This expanded the project beyond a basic buzzer circuit
+        and introduced another layer of hardware and software
+        coordination.
+    </p>
+
+    <p class="project-description">
+        I used the Arduino IDE to develop and compile the program.
+        This helped me identify coding issues and understand how
+        embedded software is structured around the capabilities
+        and connections of a microcontroller.
+    </p>
+
+    <h3 class="detail-heading">
+        ECE Skills & Technical Concepts Gained
+    </h3>
+
+    <ul class="project-list">
+        <li><strong>Digital inputs and outputs:</strong> Understanding how a microcontroller reads button signals and controls external components.</li>
+        <li><strong>Circuit design:</strong> Planning component connections, pin assignments, ground connections, and LED current-limiting resistors.</li>
+        <li><strong>Embedded programming:</strong> Writing Arduino code that connects software instructions to physical hardware.</li>
+        <li><strong>Digital logic:</strong> Understanding HIGH and LOW states and how INPUT_PULLUP changes button behavior.</li>
+        <li><strong>Signal generation:</strong> Using frequency values and the tone() function to produce different musical pitches.</li>
+        <li><strong>Hardware and software integration:</strong> Coordinating circuit connections with the program's input and output logic.</li>
+        <li><strong>Debugging:</strong> Using the Arduino IDE to compile code and identify programming errors.</li>
+    </ul>
+
+    <h3 class="detail-heading">
+        Outcome & Reflection
+    </h3>
+
+    <p class="project-description">
+        This project gave me a more practical understanding of
+        how computer engineering extends beyond software. Designing
+        the circuit and developing the Arduino program showed me
+        how a microcontroller interacts with the physical world
+        through electrical signals, inputs, and outputs.
+    </p>
+
+    <p class="project-description">
+        The experience strengthened my interest in digital systems,
+        embedded programming, and hardware design. As a Computer
+        Engineering student interested in chip design, I found it
+        especially valuable to work with a system where software
+        behavior depends directly on hardware connections. I would
+        like to continue exploring more advanced microcontroller
+        projects and digital circuits in the future.
+    </p>
+
+    <div class="tech-stack">
+        <span>Arduino Uno</span>
+        <span>C++</span>
+        <span>Arduino IDE</span>
+        <span>Digital Logic</span>
+        <span>Circuit Design</span>
+        <span>Embedded Systems</span>
+        <span>Microcontrollers</span>
+        <span>Hardware Integration</span>
+    </div>
+
+</section>
         <hr>
 
         <footer class="footer">
